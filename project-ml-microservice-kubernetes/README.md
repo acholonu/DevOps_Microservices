@@ -1,14 +1,56 @@
-<include a CircleCI status badge, here>
+# Status Badge
+
+[![acholonu](https://circleci.com/gh/acholonu/<PROJECT_NAME>.svg?style=svg)](<LINK>)
+
+## Summary
+
+The purpose of this project is to run a housing prediction app within a docker container.
+After building the container with no error, we then want to try and run this containerized app
+on kubernetes.
+
+## How to Run
+
+Please run the following shell commands to run this project:
+
+### To run containerized app and then make a prediction
+
+1. `./run_docker.sh`
+2. In another shell window: `./make_prediction.sh`
+
+### To run the containerized app using kubernetes
+
+1. Upload container to repository: `./upload_docker.sh`
+2. `run_kubernetes.sh`
+3. In another terminal/shell window: `./make_predictions.sh`
+4. To see the logs type: `kubectl logs house-predictions`
+
+## Key Files in The Repository
+
+In order of appearance.
+
+1. **.circleci/config.yml**:
+2. **app.py**:
+3. **docker_out.txt**:
+4. **Dockerfile**
+5. **kubernetes_out.txt**:
+6. **make_prediction.sh**:
+7. **Makefile**:
+8. **requirements.txt**:
+9. **run_cleanup.sh**:
+10. **run_docker.sh**:
+11. **run_kubernetes.sh**:
+12. **upload_docker**:
 
 ## Project Overview
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
+In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API.
 
 You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
 
 ### Project Tasks
 
 Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
+
 * Test your project code using linting
 * Complete a Dockerfile to containerize this application
 * Deploy your containerized application using Docker and make a prediction
