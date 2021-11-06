@@ -28,18 +28,18 @@ Please run the following shell commands to run this project:
 
 In order of appearance.
 
-1. **.circleci/config.yml**:
-2. **app.py**:
-3. **docker_out.txt**:
-4. **Dockerfile**
-5. **kubernetes_out.txt**:
-6. **make_prediction.sh**:
-7. **Makefile**:
-8. **requirements.txt**:
-9. **run_cleanup.sh**:
-10. **run_docker.sh**:
-11. **run_kubernetes.sh**:
-12. **upload_docker**:
+1. **.circleci/config.yml**: configures the CICD pipeline for building, installing dependency, and linting code and dockerfile.
+2. **app.py**: Flask app that has a housing app prediction.
+3. **docker_out.txt**: Output from running a predictions for the docker container.
+4. **Dockerfile**: Docker file to build the container that runs the flask app (i.e., app.py).
+5. **kubernetes_out.txt**: Output from running a prediction using kubernetes.
+6. **make_prediction.sh**: Given document.  Sample input values to use in flask.app to produce a prediction.
+7. **Makefile**: a bundle of commands that builds, installs dependencies, and lints application and Dockerfile.
+8. **requirements.txt**: lists the python packages that the application needs to run.
+9. **run_cleanup.sh**: Cleans up kubernetes clusters.
+10. **run_docker.sh**: Create a containers that runs the flask app (i.e., app.py).
+11. **run_kubernetes.sh**: Runs the containerized app on a kubernetes cluster
+12. **upload_docker**: Uploads images with flask app to docker hub.
 
 ## Project Overview
 
